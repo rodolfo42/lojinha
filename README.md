@@ -1,4 +1,4 @@
-# Desafio de programação do Airu
+# Lojinha do Airu
 
 O objetive deste projeto é avaliar a qualidade do código dos candidatos a vaga de desenvolvedor no Airu.
 
@@ -18,13 +18,7 @@ Uma das formas de diminuir a taxa de abandono de uma compra é oferecer um coupo
 
 - Possui um valor de desconto;
 - Só pode ser aplicado no caso de o valor da compra ultrapassar um valor mínimo;
-- Ao usá-lo em uma compra, imprimir mensagem "Desconto: <valor>"
-
-### Prazo de entrega
-
-A forma como calculamos o prazo de entrega não é muito prática para o cliente identificar o dia da entrega. O prazo que nós exibimos não leva em consideração finais de semana.
-
-Você deve implementar uma feature que descobre o dia em que a entrega será feita levando em consideração que o prazo para entrega só conta para dias úteis.
+- Ao usá-lo em uma compra, imprimir mensagem "Desconto: valor"
 
 ### Novos tipos de produto
 
