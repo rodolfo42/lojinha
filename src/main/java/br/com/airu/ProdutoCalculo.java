@@ -9,7 +9,13 @@ public enum ProdutoCalculo {
 	private ProdutoCalculo(int tipo) {
 		this.tipo = tipo;
 	}
-
+	
+	/**
+	 * Calcula o preço do produto de acordo com este tipo de cálculo e com o preço do produto informado.
+	 * 
+	 * @param preco Preço do produto
+	 * @return preço
+	 */
 	public float calcularPreco(float preco) {
 		switch (this.tipo) {
 		case 0:
@@ -17,8 +23,8 @@ public enum ProdutoCalculo {
 		case 3:
 			// preco normal
 			break;
-		case 2: // importados
-				// acrescenta metade do preco
+		case 2: // somente importados
+				// acrescentar metade do preco
 			preco *= 1.5;
 			break;
 		}
@@ -26,6 +32,11 @@ public enum ProdutoCalculo {
 		return preco;
 	}
 
+	/**
+	 * Calcula o prazo de entrega de acordo com este tipo de cálculo.
+	 * 
+	 * @return prazo
+	 */
 	public int calcularPrazo() {
 		int prazo = 0;
 		switch (this.tipo) {
@@ -44,6 +55,11 @@ public enum ProdutoCalculo {
 		return prazo;
 	}
 
+	/**
+	 * Calcula o frete de acordo com este tipo de cálculo.
+	 * 
+	 * @return frete
+	 */
 	public float calcularFrete() {
 		float frete = 0;
 		switch (this.tipo) {
