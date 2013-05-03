@@ -39,6 +39,6 @@ public class Cupom {
 	 * @return
 	 */
 	public boolean permiteUtilizacao(float total) {
-		return valorMinimo >= total;
+		return valorMinimo <= total;
 	}
 }
