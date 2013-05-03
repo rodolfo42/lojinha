@@ -2,19 +2,14 @@ package br.com.airu;
 
 public class Produto {
 
-	public static final int COMUM = 0;
-	public static final int MANUFATURADO = 1;
-	public static final int IMPORTADO = 2;
-	public static final int PERECIVEL = 3;
-
 	private final String titulo;
 	private final float preco;
-	private final int tipo;
+	private final ProdutoCalculo calculo;
 
-	public Produto(final String titulo, final float preco, final int tipo) {
+	public Produto(final String titulo, final float preco, final ProdutoCalculo calculo) {
 		this.titulo = titulo;
 		this.preco = preco;
-		this.tipo = tipo;
+		this.calculo = calculo;
 	}
 
 	public String getTitulo() {
@@ -22,11 +17,15 @@ public class Produto {
 	}
 
 	public float getPreco() {
-		return preco;
+		return calculo.calcularPreco(preco);
+	}
+	
+	public float getFrete() {
+		return calculo.calcularFrete();
 	}
 
-	public int getTipo() {
-		return tipo;
+	public int getPrazo() {
+		return calculo.calcularPrazo();
 	}
 
 	// Importante: implementar o hashCode() para usar Produto com key do Hashtable do Pedido

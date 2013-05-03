@@ -113,30 +113,11 @@ public class Pedido {
 				continue;
 			} else {
 				produto = linha.getKey();
-				switch (produto.getTipo()) {
-					case Produto.COMUM:
-						total += produto.getPreco() * quantidade;
-						prazo = prazo < 3 ? 3 : prazo;
-						frete += 10 * quantidade;
-						break;
-					case Produto.MANUFATURADO:
-						total += produto.getPreco() * quantidade;
-						prazo = prazo < 5 ? 5 : prazo;
-						frete += 10;
-						break;
-					case Produto.IMPORTADO:
-						total += produto.getPreco() * quantidade * 1.5;
-						prazo = prazo < 15 ? 15 : prazo;
-						frete += 20;
-						break;
-					// novo tipo de produto
-					// poderia aplicar DRY, mas mantive assim para brevidade
-					case Produto.PERECIVEL:
-						total += produto.getPreco() * quantidade;
-						prazo = prazo < 3 ? 3 : prazo;
-						frete += (10 * 10); // mantive conta para legibilidade
-						break;
-				}
+				
+				// centralizada logica de cada tipo no ProdutoCalculo
+				total += produto.getPreco() * quantidade;
+				prazo = prazo < produto.getPrazo() ? produto.getPrazo() : prazo;
+				frete += produto.getFrete();
 			}
 		}
 		

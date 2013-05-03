@@ -9,7 +9,7 @@ public class ClienteTest {
 	@Test
 	public void testCheckoutSimples() {
 		Cliente yokomizor = new Cliente("Rogério");
-		Produto xbox = new Produto("xbox", 1.00f, Produto.COMUM);
+		Produto xbox = new Produto("xbox", 1.00f, ProdutoCalculo.COMUM);
 		Pedido pedido = new Pedido(yokomizor);
 		pedido.addProduto(xbox);
 		assertEquals("Pedido para Rogério\n" +
@@ -22,10 +22,10 @@ public class ClienteTest {
 	public void testCheckoutQuantidades() {
 		Cliente emiguelt = new Cliente("Edwin");
 		
-		Produto caixa = new Produto("caixa de milho", 10.00f, Produto.COMUM);
-		Produto boneca = new Produto("boneca", 39.99f, Produto.MANUFATURADO);
-		Produto relogio = new Produto("relógio", 45.50f, Produto.IMPORTADO);
-		Produto presunto = new Produto("presunto", 4.57f, Produto.PERECIVEL);
+		Produto caixa = new Produto("caixa de milho", 10.00f, ProdutoCalculo.COMUM);
+		Produto boneca = new Produto("boneca", 39.99f, ProdutoCalculo.MANUFATURADO);
+		Produto relogio = new Produto("relógio", 45.50f, ProdutoCalculo.IMPORTADO);
+		Produto presunto = new Produto("presunto", 4.57f, ProdutoCalculo.PERECIVEL);
 		
 		Pedido pedido = new Pedido(emiguelt);
 		pedido.addProduto(caixa);
@@ -44,7 +44,7 @@ public class ClienteTest {
 	@Test
 	public void testCheckoutCupomOk() {
 		Cliente yokomizor = new Cliente("Rogério");
-		Produto xbox = new Produto("xbox", 360.00f, Produto.COMUM);
+		Produto xbox = new Produto("xbox", 360.00f, ProdutoCalculo.COMUM);
 		Pedido pedido = new Pedido(yokomizor);
 		pedido.addProduto(xbox);
 		
@@ -63,10 +63,10 @@ public class ClienteTest {
 	public void testCheckoutCupomNaoPermitido() {
 		Cliente emiguelt = new Cliente("Edwin");
 		
-		Produto caixa = new Produto("caixa de milho", 10.00f, Produto.COMUM);
-		Produto boneca = new Produto("boneca", 39.99f, Produto.MANUFATURADO);
-		Produto relogio = new Produto("relógio", 45.50f, Produto.IMPORTADO);
-		Produto presunto = new Produto("presunto", 4.57f, Produto.PERECIVEL);
+		Produto caixa = new Produto("caixa de milho", 10.00f, ProdutoCalculo.COMUM);
+		Produto boneca = new Produto("boneca", 39.99f, ProdutoCalculo.MANUFATURADO);
+		Produto relogio = new Produto("relógio", 45.50f, ProdutoCalculo.IMPORTADO);
+		Produto presunto = new Produto("presunto", 4.57f, ProdutoCalculo.PERECIVEL);
 		
 		Pedido pedido = new Pedido(emiguelt);
 		pedido.addProduto(caixa);
